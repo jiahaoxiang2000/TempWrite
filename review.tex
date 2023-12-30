@@ -1,4 +1,5 @@
 \documentclass{article}
+
 \usepackage[utf8]{inputenc}
 
 \title{Paper Review: High-speed Hardware Architecture of KLEIN Cipher for IoT Image Encryption Applications}
@@ -9,23 +10,34 @@
 
 \maketitle
 
-\section{Introduction}
-
-
-
-
 \section{Review Points}
 \begin{enumerate}
-\item The importance of the topic and whether it is suitable for publication in this journal.
-\item The originality of the work.
-\item Does the manuscript use sufficient references, appropriate language and styles.
-\item Does the title of the manuscript is appropriate?
-\item The abstract adequately summarizes the content of the manuscript?
-\item The comprehensiveness of literature review, statement of problem, research gap and objectives of the study.
-\item Does the adopted methodology described in the manuscript is sound?
-\item The findings of this manuscript are correctly interpreted?
-\item The quality of figures and illustrations is acceptable?
-\end{enumerate} 
+    \item The importance of the topic and whether it is suitable for publication in this journal.
+    \item The originality of the work.
+    \item Does the manuscript use sufficient references, appropriate language and styles.
+    \item Does the title of the manuscript is appropriate?
+    \item The abstract adequately summarizes the content of the manuscript?
+    \item The comprehensiveness of literature review, statement of problem, research gap and objectives of the study.
+    \item Does the adopted methodology described in the manuscript is sound?
+    \item The findings of this manuscript are correctly interpreted?
+    \item The quality of figures and illustrations is acceptable?
+\end{enumerate}
 
+\section{Review Comments}
+
+This paper introduces a high-speed hardware architecture, designed specifically for the KLEIN cipher, with a focus on image encryption applications within the Internet of Things (IoT) domain. The authors have successfully implemented the proposed architecture on both FPGA and ASIC platforms and have included an analysis of image security. However, there are concerns regarding the originality of the work and the comparison of experimental results, among other issues. Consequently, a major revision is recommended. The specific points for revision are as follows:
+
+\begin{enumerate}
+    \item The first contribution includes an implementation that supports both encryption and decryption, a fundamental requirement for symmetric ciphers. However, the strategy of using multiple mutexes under control signals to direct the data flow for encryption or decryption is not unique, as it is also employed in other ciphers.
+    \item Furthermore, a more efficient implementation method is discussed in \cite{Shahbazi2021}, which carries out the same MixColumn operation using a greater number of logic gates. It would be beneficial for the authors to compare the performance of these two implementations.
+    \item In Section 5.1, "Results for FPGA Implementation", the authors compare their implementation with another KLEIN implementation proposed in \cite{Singh2019}. However, they only compare their work with Design 1 from \cite{Singh2019}, neglecting to compare it with Design 2. Given that Design 2 has a higher throughput (speed) than Design 1, the comparison with only Design 1 seems unfair.
+    \item In Section 5.2, "Results for ASIC Implementation", Figure 8 compares the throughput at a frequency of 100KHz for different ciphers. However, a comparison using the maximum frequency would be more beneficial. At a specific frequency, throughput is mainly about latency. Therefore, the current comparison does not sufficiently demonstrate the high-speed advantage of the proposed design.
+    \item There are some issues with the figures and tables. In Figure 1, some symbols are missing, for example, the data flow in front of the $X4<<1$. Additionally, an explanation for 'A' is needed. Table 6 could be removed, as it does not contain any comparative data. 
+    \item The structure of the paper could be improved. For instance, the logical progression introduced is IoT -> lightweight cryptography -> cryptography -> lightweight cryptography -> hardware implementation -> KLEIN cipher. A more coherent structure would be IoT -> cryptography -> lightweight cryptography -> hardware implementation -> KLEIN cipher. Additionally, sections 3.1 "Modification in Mix column" and 3.2 "Proposed Enc-Dec Architecture" do not seem to be on the same level of discussion.
+    \item Lastly, the references used are not recent. It is suggested that some newer references from the past three years be included.
+\end{enumerate}
+
+\bibliographystyle{plain} % Add the bibliography style
+\bibliography{ref}
 
 \end{document}
