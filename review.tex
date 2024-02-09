@@ -2,7 +2,7 @@
 
 \usepackage[utf8]{inputenc}
 
-\title{Paper Review: High-speed Hardware Architecture of KLEIN Cipher for IoT Image Encryption Applications}
+\title{Paper Review: Optimized SM4 Hardware Implementations for Low Area Consumption}
 \author{Jiahao Xiang}
 \date{\today}
 
@@ -12,19 +12,22 @@
 
 \section{Review Comments}
 
-This paper introduces a high-speed hardware architecture, designed specifically for the KLEIN cipher, with a focus on image encryption applications within the Internet of Things (IoT) domain. The authors have successfully implemented the proposed architecture on both FPGA and ASIC platforms and have included an analysis of image security. However, there are concerns regarding the originality of the work and the comparison of experimental results, among other issues. Consequently, a major revision is recommended. The specific points for revision are as follows:
+This paper introduces new, compact hardware architectures for the SM4 cipher, realized by minimizing the data path. The authors suggest two unique methods, "split-and-join" and "off-peak and stagger". These methods improve the usability of SM4 in environments with limited resources, allowing the cipher to function efficiently with low area usage. However, there are some errors in the figures and tables, and certain sentences are confusing. Here are some comments on the paper:
 
 \begin{enumerate}
-    \item The first contribution includes an implementation that supports both encryption and decryption, a fundamental requirement for symmetric ciphers. However, the strategy of using multiple mutexes under control signals to direct the data flow for encryption or decryption is not unique, as it is also employed in other ciphers.
-    \item Furthermore, a more efficient implementation method is discussed in \cite{Shahbazi2021}, which carries out the same MixColumn operation using a greater number of logic gates. It would be beneficial for the authors to compare the performance of these two implementations.
-    \item In Section 5.1, "Results for FPGA Implementation", the authors compare their implementation with another KLEIN implementation proposed in \cite{Singh2019}. However, they only compare their work with Design 1 from \cite{Singh2019}, neglecting to compare it with Design 2. Given that Design 2 has a higher throughput (speed) than Design 1, the comparison with only Design 1 seems unfair.
-    \item In Section 5.2, "Results for ASIC Implementation", Figure 8 compares the throughput at a frequency of 100KHz for different ciphers. However, a comparison using the maximum frequency would be more beneficial. At a specific frequency, throughput is mainly about latency. Therefore, the current comparison does not sufficiently demonstrate the high-speed advantage of the proposed design.
-    \item There are some issues with the figures and tables. In Figure 1, some symbols are missing, for example, the data flow in front of the $X4<<1$. Additionally, an explanation for 'A' is needed. Table 6 could be removed, as it does not contain any comparative data. 
-    \item The paper's structure could benefit from some improvements. Currently, the logical progression is from IoT to lightweight cryptography, then to cryptography, back to lightweight cryptography, then to hardware implementation, and finally to the KLEIN cipher. A more streamlined structure might be: IoT, cryptography, lightweight cryptography, hardware implementation, and then the KLEIN cipher. Furthermore, Sections 3.1 "Modification in Mix column" and 3.2 "Proposed Enc-Dec Architecture" appear to be discussing topics at different levels of detail.
-    \item Lastly, the references used are not recent. It is suggested that some newer references from the past three years be included.
+    \item Section 1: The references to SIMON[3] and SPECK are unclear. Please clarify the reference for SPECK.
+    \item It would be helpful to add a table illustrating the differences between M-I, M-II, and M-III. The current numerical representation is hard to understand.
+    \item Section 2 (SM4): The details of the SM4's sbox are missing. Please include these details.
+    \item Section 3: Consider reorganizing the "Design and Analysis" section. Grouping the design and implementation together might make the design easier to understand.
+    \item Figure 2 needs a more detailed explanation. Some arrows associated with the XOR gate are missing.
+    \item The title of Figure 5 is incorrect. It should refer to both linear and nonlinear transformation.
+    \item Table 1 should include the area consumption of the multiplexer.
+    \item Table 2: The S-box is loaded twice. Please clarify this with a footnote.
+    \item Figure 22 has an error in the middle subfigure and the third row. It currently reads "X35 X35", but it should be "X35 X33".
+    \item Table 7: The throughput is consistent across different frequencies. This is unusual for SM4-32bit and SM4-4bit on the SMIC 180 nm. Please provide an explanation if this is the case.
 \end{enumerate}
 
 \bibliographystyle{plain} % Add the bibliography style
-\bibliography{ref}
+% \bibliography{ref} % Add the bibliography data
 
 \end{document}
