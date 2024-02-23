@@ -2,7 +2,7 @@
 
 \usepackage[utf8]{inputenc}
 
-\title{Paper Review: Optimized SM4 Hardware Implementations for Low Area Consumption}
+\title{Paper Review: Evaluation of Power Consumption Efficiency of Encryption Schemes for RFID Systems}
 \author{Jiahao Xiang}
 \date{\today}
 
@@ -12,19 +12,15 @@
 
 \section{Review Comments}
 
-This paper introduces new, compact hardware architectures for the SM4 cipher, realized by minimizing the data path. The authors suggest two unique methods, "split-and-join" and "off-peak and stagger". These methods improve the usability of SM4 in environments with limited resources, allowing the cipher to function efficiently with low area usage. However, there are some errors in the figures and tables, and certain sentences are confusing. Here are some comments on the paper:
+This paper discusses the implementation of the AES and Salsa20 algorithms and evaluates their power consumption efficiency. However, it lacks innovation and the results are predictable. The paper could be improved. Detailed comments are as follows:
 
 \begin{enumerate}
-    \item Section 1: The references to SIMON[3] and SPECK are unclear. Please clarify the reference for SPECK.
-    \item It would be helpful to add a table illustrating the differences between M-I, M-II, and M-III. The current numerical representation is hard to understand.
-    \item Section 2 (SM4): The details of the SM4's sbox are missing. Please include these details.
-    \item Section 3: Consider reorganizing the "Design and Analysis" section. Grouping the design and implementation together might make the design easier to understand.
-    \item Figure 2 needs a more detailed explanation. Some arrows associated with the XOR gate are missing.
-    \item The title of Figure 5 is incorrect. It should refer to both linear and nonlinear transformation.
-    \item Table 1 should include the area consumption of the multiplexer.
-    \item Table 2: The S-box is loaded twice. Please clarify this with a footnote.
-    \item Figure 22 has an error in the middle subfigure and the third row. It currently reads "X35 X35", but it should be "X35 X33".
-    \item Table 7: The throughput is consistent across different frequencies. This is unusual for SM4-32bit and SM4-4bit on the SMIC 180 nm. Please provide an explanation if this is the case.
+    \item The title does not accurately reflect the content. While the paper evaluates the AES and Salsa20 algorithms, it does not cover all Encryption Schemes for RFID Systems. The consideration of lightweight cryptography algorithms is notably absent.
+    \item The paper's organization could be clearer. The Abstract and Introduction sections only present the work's objectives and results, without detailing the methods and processes. This could lead to confusion for readers.
+    \item The paper does not provide a clear motivation for the work. The authors should explain why their approach could improve power consumption efficiency, rather than simply conducting an experiment without providing a rationale.
+    \item In the section on figures and equations, the figures lack clear explanations. Additionally, the equations are not numbered, which makes them difficult to understand.
+    \item The results presented in the paper are not convincing due to the lack of comparison with similar work. This makes it challenging to evaluate the quality of the results.
+    \item Lastly, the references used in the paper are outdated. For example, the cryptanalysis paper referenced is not the most recent, which could undermine the paper's credibility.
 \end{enumerate}
 
 \bibliographystyle{plain} % Add the bibliography style
