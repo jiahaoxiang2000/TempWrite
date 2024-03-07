@@ -11,17 +11,26 @@
 \maketitle
 
 \section{Review Comments}
+Most of my comments are addressed but I advise you to add recent surveys on PQC to the paper and comment that you algorithm using Grover's still will be secure see below:
 
-This paper discusses the implementation of the AES and Salsa20 algorithms and evaluates their power consumption efficiency. However, it lacks innovation and the results are predictable. The paper could be improved. Detailed comments are as follows:
 
-\begin{enumerate}
-    \item The title does not accurately reflect the content. While the paper evaluates the AES and Salsa20 algorithms, it does not cover all Encryption Schemes for RFID Systems. The consideration of lightweight cryptography algorithms is notably absent.
-    \item The paper's organization could be clearer. The Abstract and Introduction sections only present the work's objectives and results, without detailing the methods and processes. This could lead to confusion for readers.
-    \item The paper does not provide a clear motivation for the work. The authors should explain why their approach could improve power consumption efficiency, rather than simply conducting an experiment without providing a rationale.
-    \item In the section on figures and equations, the figures lack clear explanations. Additionally, the equations are not numbered, which makes them difficult to understand.
-    \item The results presented in the paper are not convincing due to the lack of comparison with similar work. This makes it challenging to evaluate the quality of the results.
-    \item Lastly, the references used in the paper are outdated. For example, the cryptanalysis paper referenced is not the most recent, which could undermine the paper's credibility.
-\end{enumerate}
+Envisioning the future of cyber security in post-quantum era: A survey on pq standardization, applications, challenges and opportunities
+2023/10/18
+Source
+arXiv preprint arXiv:2310.12037
+
+Algorithmic Security is Insufficient: A Comprehensive Survey on Implementation Attacks Haunting Post-Quantum Security
+2023/5/22
+Source
+arXiv preprint arXiv:2305.13544
+
+Response: We have included recent surveys on Post-Quantum Cryptography (PQC) in our paper and noted that our algorithm, which uses Grover's method, maintains security. The detailed revision is as follows:
+
+Although quantum computing has enhanced capabilities to attack ciphers, as highlighted by Darzi et al. [27] and Canto et al. [28], it's worth noting that the CRAFT cipher demonstrates resistance to the probabilistic algorithm, based on quantum computing, proposed by Grover et al. [29].
+
+[27] S. Darzi, K. Ahmadi, S. Aghapour, A. A. Yavuz, M. M. Kermani, Envisioning the future of cyber security in post-quantum era: A survey on PQ standardization, applications, challenges and opportunities, CoRR abs/2310.12037 (2023). arXiv:2310.12037, doi:10.48550/ARXIV.2310.12037.
+[28] A. C. Canto, J. Kaur, M. M. Kermani, R. Azarderakhsh, Algorithmic security is insufficient: A comprehensive survey on implementation attacks haunting post-quantum security, CoRR abs/2305.13544 (2023). arXiv:2305.13544, doi:10.48550/ARXIV.2305.13544.
+[29] L. K. Grover, A fast quantum mechanical algorithm for database search, in: Proceedings of the twenty-eighth annual ACM symposium on Theory of computing - STOC '96, STOC '96, ACM Press, 1996. doi:10.1145/237814.237866.
 
 \bibliographystyle{plain} % Add the bibliography style
 % \bibliography{ref} % Add the bibliography data
