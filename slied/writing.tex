@@ -1,12 +1,12 @@
 \documentclass{beamer}
 
 % Theme choice:
-\usetheme{AnnArbor}
+\usetheme{Madrid}
 
 % Title page details: 
 \title{Writing a Paper}
 % \subtitle{A Personal Perspective}
-\author{Jiahao Xiang\inst{1}}
+\author[xjh]{Jiahao Xiang\inst{1}}
 \institute{
     \inst{1}
     Hengyang Normal University
@@ -15,9 +15,30 @@
 
 \begin{document}
 
+
 % Title page frame
 \begin{frame}
     \titlepage
 \end{frame}
+
+% Outline frame
+% \begin{frame}{Content}
+%     \tableofcontents
+% \end{frame}
+\AtBeginSection[ ]
+{
+\begin{frame}{Content}
+    \tableofcontents[currentsection]
+\end{frame}
+}
+
+% main content
+\section{Prepare}
+
+
+\section{Writing}
+
+\section{Submission and Review}
+
 
 \end{document}
