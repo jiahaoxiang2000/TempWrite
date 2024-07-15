@@ -40,18 +40,111 @@
 
 \section{背景}
 
+\begin{frame}{\textit{密码学算法库}}
+    \begin{itemize}
+        \item 特性
+              \begin{itemize}
+                  \item 数据的\textcolor{red}{机密性}，对于攻击者来说不可见原始信息。
+                  \item 数据的完整性，防止攻击者修改原始信息。
+                  \item 数据的\textcolor{red}{可用性}，实际应用中的易用性和有效性，如\textcolor{blue}{加密性能}。
+                  \item 。。。
+              \end{itemize}
+        \item 上层通信协议
+              \begin{itemize}
+                  \item \textcolor{red}{SSL/TLS}：安全套接字层（SSL）和传输层安全（TLS），常用如HTTPS协议。
+                  \item IPsec：互联网协议安全（IPsec）是一组协议，通常用于建立虚拟专用网络（VPN）。
+                  \item SSH：安全外壳协议（SSH）是一种用于在不安全的网络上安全地访问远程计算机的协议。
+                  \item PGP：非常好的隐私（PGP）是一种用于加密和解密数据的程序，通常用于保护电子邮件通信的安全。
+              \end{itemize}
+        \item \textcolor{blue}{我们每天都在使用这些协议，每天都在使用密码学算法库。}
+    \end{itemize}
+\end{frame}
 
+\begin{frame}{\textit{轻量级密码学算法库}}
+    \begin{itemize}
+        \item \textcolor{red}{资源受限}的环境下，实现的密码学算法库。
+              \begin{itemize}
+                  \item 低功耗，如受限设备功耗为100mW，而PC机为250W。
+                  \item 低存储，如受限设备存储为64KB，而PC机为1TB。
+                  \item 低计算频率，如受限设备为64MHz，而PC机为5GHz。
+              \end{itemize}
+        \item 上层通信协议
+              \begin{itemize}
+                  \item \textcolor{red}{MQTT}: 轻量级的发布/订阅消息传输协议。例如，智能家居设备使用MQTT协议来传输传感器数据和控制命令。
+                  \item CoAP: 受限制应用协议，近似与HTTP，常用于物联网（IoT）环境。例如，智能照明系统使用CoAP协议来控制灯光的开关和亮度。
+              \end{itemize}
+        \item \textcolor{blue}{如何在资源相差约1000倍的设备上实现密码学算法库？}
+    \end{itemize}
+\end{frame}
 
-\section{问题}
+\section{痛点}
+
+\begin{frame}{\textit{安全}}
+    \begin{itemize}
+        \item \textcolor{red}{安全}是密码学算法库最基本的要求。
+              \begin{itemize}
+                  \item 攻击者可以在获取设备的物理访问权限后，通过\textcolor{red}{侧信道攻击}（如功耗分析、时序分析、电磁分析等）来窃取设备中的敏感信息。
+                  \item 利用协议漏洞，如\textcolor{red}{重放攻击}、\textcolor{red}{中间人攻击}、\textcolor{red}{拒绝服务攻击}等，干扰设备正常工作。
+              \end{itemize}
+        \item 如何在资源受限的设备上实现更\textcolor{blue}{安全}的密码学算法库？
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{\textit{性能}}
+    \begin{itemize}
+        \item \textcolor{red}{性能}限制加密库的使用场景。
+              \begin{itemize}
+                  \item 加密性能：加密速度、解密速度、加密延迟、解密延迟。
+                  \item 存储性能：存储空间、存储延迟。
+              \end{itemize}
+        \item 如何在资源受限的设备上实现更\textcolor{blue}{高性能}的密码学算法库？
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{\textit{可移植性}}
+    \begin{itemize}
+        \item \textcolor{red}{可移植性}影响到加密库的可用性。
+              \begin{itemize}
+                  \item 跨平台：支持多种硬件平台，如ARM、MIPS、X86等。
+                  \item 跨编程语言：支持多种编程语言，如C、C++、Python等。
+              \end{itemize}
+        \item 如何在资源受限的设备上实现更\textcolor{blue}{可移植}的密码学算法库？
+    \end{itemize}
+\end{frame}
 
 \section{目标}
 
+\begin{frame}{\textit{性能}}
+    \begin{itemize}
+        \item 使用预计算、查找表、位运算等\textcolor{blue}{通用优化技术}，提高加密性能。
+        \item 采用扩展指令集、硬件加速器等\textcolor{red}{特定优化技术}，提高加密性能。
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{\textit{可移植性}}
+    \begin{itemize}
+        \item 使用\textcolor{blue}{标准化接口}，如OpenSSL、mbedTLS等，提高可移植性。
+        \item 使用\textcolor{blue}{模块化设计}，提高可移植性。
+        \item \textcolor{red}{多平台支持}，如ARM、MIPS、X86等。
+    \end{itemize}
+\end{frame}
+
+
+\begin{frame}{\textit{更安全}}
+    \begin{itemize}
+        \item 使用轻量级的密码原语，去\textcolor{red}{设计加密算法}。
+        \item 设计抵抗侧信道攻击的\textcolor{red}{实现方案}。
+        \item \textcolor{red}{修改通讯协议}，增加安全性。
+    \end{itemize}
+\end{frame}
 
 
 \begin{frame}{\textit{Thank You}}
     \centering
     \Large
     Thank you for your attention! \\
+    \normalsize
+    项目参考：\url{https://github.com/Tongsuo-Project/tongsuo-mini}.\\
 \end{frame}
 
 \end{document}
