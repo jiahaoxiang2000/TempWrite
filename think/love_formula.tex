@@ -1,13 +1,17 @@
 \documentclass{article}
 
-\usepackage[a4paper, margin=0.5in]{geometry} % Adjust page margins here
+\usepackage[a4paper]{geometry} % Adjust page margins here
 \usepackage{url}
 \usepackage{hyperref}
 \usepackage{amsthm} % Add the missing package
+\usepackage{amsmath}
+\usepackage{amssymb}
 \usepackage{booktabs}
 
 \newtheorem{theorem}{Theorem}
 \newtheorem{assumption}{Assumption}
+\newtheorem{definition}{Definition}
+\newtheorem{proposition}{Proposition}
 
 \title{\textit{Love}}
 
@@ -22,6 +26,36 @@ Love is a complex emotion, often characterized by behaviors that can be difficul
 
 \section{Modeling}
 \subsection{Basic Definitions}
-The love is between two people, denoted as $a$ and $b$, there $a,b\in P$. We define the love between $a$ and $b$ as $\{(a,b)|L(a,b)\}$. The love is not the symmetric relation, i.e., $L(a,b)\neq L(b,a)$.
+
+\begin{definition}
+    Love is a relationship between two people, denoted as $a$ and $b$, where $a, b \in P$. We define the love between $a$ and $b$ as:
+    \[
+        L(a, b) = \{(a, b) \mid a, b \in P \text{ and } L(a, b) \text{ holds}\}
+    \]
+    Here, $P$ represents the set of all people, and $L(a, b)$ is a predicate that holds true if and only if there is love between $a$ and $b$.
+\end{definition}
+
+
+\begin{proposition}
+    Love is not a symmetric relation, i.e., $L(a,b) \neq L(b,a)$.
+\end{proposition}
+
+\begin{proof}
+    To prove that love is not a symmetric relation, we need to show that there exists at least one pair $(a, b)$ such that $L(a, b)$ holds but $L(b, a)$ does not hold.
+
+    Consider two individuals $a$ and $b$. Suppose $a$ loves $b$, which we denote as $L(a, b)$. However, this does not necessarily imply that $b$ loves $a$. In other words, $L(b, a)$ may not hold.
+
+    For example, let $a$ be an individual who has expressed love towards $b$, but $b$ does not reciprocate this feeling. In this case, $L(a, b)$ is true, but $L(b, a)$ is false. Therefore, $L(a, b) \neq L(b, a)$.
+
+    This example demonstrates that love is not a symmetric relation.
+\end{proof}
+
+\subsection{Evaluation Love Intensity}
+
+\begin{definition}
+    The intensity of love between two individuals $a$ and $b$ is denoted as $I(a, b)$, where $I(a, b) \in \mathbb{R}$. The intensity of love can be evaluated based on the following factors:
+ 
+\end{definition}
+
 
 \end{document}
