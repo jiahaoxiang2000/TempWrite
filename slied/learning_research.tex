@@ -9,6 +9,15 @@
 \usetheme{Madrid}
 \usecolortheme{seahorse}
 
+% Custom block colors
+\setbeamercolor{block title}{bg=blue!30,fg=black}
+\setbeamercolor{block body}{bg=blue!10,fg=black}
+% \setbeamercolor{alertblock title}{bg=red!50,fg=white}
+% \setbeamercolor{alertblock body}{bg=red!20,fg=black}
+\setbeamercolor{exampleblock title}{bg=green!50,fg=black}
+\setbeamercolor{exampleblock body}{bg=green!20,fg=black}
+
+
 % Title, author, and date information:
 \title{\textbf{Learning Research}}
 \author[xjh]{Jiahao Xiang\inst{1}}
@@ -27,10 +36,16 @@
 \begin{frame}
     \frametitle{Preface}
     % introduce the share speech motivation
-    \textbf{Motivation:} 对于接触Research一年多的，还是小白的我来说，不具备一套高效的方法论。借助这次分享，我们对常年混迹与顶会的，一位浙大的大佬分享的\texttt{learning\_research}进行学习，在大佬的输入下，通过这次分享会，输出一下我们学习到的内容，希望能够对大家有所帮助。
+    \textbf{Motivation:} 对于接触Research一年多，还是小白的我来说，不具备一套高效的方法论。这次分享，我们对常年混迹与顶会的，一位浙大的大佬（彭思达）分享的\texttt{learning\_research}进行学习，在大佬的输入下，输出一下我们学习到的内容，希望能够对大家也有所帮助。
     \vfill
-    \url{https://github.com/pengsida/learning_research}，我们汇报的slide：
-    \url{https://github.com/jiahaoxiang2000/TempWrite/blob/master/slied/learning_research.pdf}
+    \begin{block}{大佬思想使用该颜色块标注}
+        \url{https://github.com/pengsida/learning_research}
+    \end{block}
+    \begin{exampleblock}{我们的想法}
+        我们汇报的slide: \url{https://github.com/jiahaoxiang2000/TempWrite/blob/master/slied/learning_research.pdf}
+    \end{exampleblock}
+    
+    
 \end{frame}
 
 \begin{frame}
@@ -38,44 +53,44 @@
     \tableofcontents
 \end{frame}
 
-\section{Introduction}
+\section{找问题}
 \begin{frame}
-    \frametitle{Introduction}
-    \begin{itemize}
-        \item Brief overview of the topic
-        \item Importance of the research
-        \item Objectives of the presentation
-    \end{itemize}
+    \frametitle{找问题}
+    \begin{block}{一阶段}
+        这个阶段追求\textcolor{blue}{广度}，了解一些基础的概念和算法。不要求深度，不要求掌握/熟悉算法所有的细节。这个阶段的目的是让你对大方向有一个大概的了解，知道有哪些算法，知道这些算法的\textcolor{blue}{大概原理}，知道这些算法的应用场景。
+    \end{block}
+    \begin{block}{二阶段}
+        这个阶段追求\textcolor{blue}{深度}，追求掌握某一篇论文的细节（算法细节、代码实现细节）。这个阶段的目标是构建某一个科研细分方向的算法基础，了解一篇\textcolor{red}{论文}是怎么做出来的（寻找科研问题、想idea、做实验、写论文）。
+    \end{block}
+    \begin{exampleblock}{找问题}
+        当来到二阶段时，一类问题已经明显了，一类为旧的issue，我们阅读的文献；二类为新的issue，属于开创新的贡献。
+    \end{exampleblock}
+
 \end{frame}
 
-\section{Methodology}
+\section{解问题}
 \begin{frame}
-    \frametitle{Methodology}
-    \begin{itemize}
-        \item Research methods used
-        \item Data collection techniques
-        \item Analysis approach
-    \end{itemize}
+    \frametitle{解问题}
+    \begin{block}{三阶段}
+        在有了一定算法基础以后，开始在实验室的指导下做一个自己一作的Project。这个阶段的目标是通过\textcolor{red}{实践}来学习一篇论文是怎么做出来的。
+    \end{block}
+    \begin{exampleblock}{想idea}
+        想点子的过程，就是尝试去解问题的过程。找找旧的解法，看看有没有可以改进的地方，或者能不能引入一些新的思路。
+    \end{exampleblock}
+    \begin{block}{杨植麟认为}
+        技术的本质就是对方法做\textcolor{red}{组合}，把小的技术组合成大的技术，把老的技术组合成新的技术。
+    \end{block}
 \end{frame}
 
-\section{Results}
-\begin{frame}
-    \frametitle{Results}
-    \begin{itemize}
-        \item Key findings
-        \item Statistical results
-        \item Interpretation of the results
-    \end{itemize}
-\end{frame}
+
+
+\section{做实验}
+
+\section{写论文}
+
+\section{搓PPT}
 
 \section{Conclusion}
-\begin{frame}
-    \frametitle{Conclusion}
-    \begin{itemize}
-        \item Summary of findings
-        \item Implications of the research
-        \item Future research directions
-    \end{itemize}
-\end{frame}
+
 
 \end{document}
