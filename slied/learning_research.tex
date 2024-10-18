@@ -17,6 +17,9 @@
 \setbeamercolor{exampleblock title}{bg=green!50,fg=black}
 \setbeamercolor{exampleblock body}{bg=green!20,fg=black}
 
+% Enable figure numbering
+\setbeamertemplate{caption}[numbered]
+
 
 % Title, author, and date information:
 \title{\textbf{Learning Research}}
@@ -124,7 +127,7 @@
     \begin{exampleblock}{找点子}
         点子函数$f:g\mapsto q$, 其中$g$为具有泛化性的知识，i.e. 可以用在多个问题上，$q$为具体的问题。我们的目标是找到一个函数$f$，使得$q$尽可能优。
 
-        1）知$f_1:g\mapsto q_1,q_1\approx q_2$,求$f_2:g\mapsto q_2$。2）和3）知$q$,找$g$,求$f$。4）知$q,g$,求$f$。\textcolor{blue}{2)和3）难，1）简单一些}。
+        1）知$f_1:g\mapsto q_1,q_1\approx q_2$,求$f_2:g\mapsto q_2$。2）和3）知$q$,找$g$,求$f$。4）知$q,g$,求$f$。\textcolor{blue}{2）和3）难，1）简单一些}。
     \end{exampleblock}
     5. 实验验证创新点。
 \end{frame}
@@ -161,6 +164,31 @@
 
 
 \section{做实验}
+
+\begin{frame}
+    \frametitle{做实验}
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width=0.8\textwidth]{figure/idea_not_work.png}
+        \caption{如何找到当前实验不work的原因}
+        \label{fig:experiment}
+    \end{figure}
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{做实验}
+    \begin{block}{not work怎么办}
+        \begin{enumerate}
+            \item 搜集当前实验的failure cases
+            \item 搜集当前实验的good cases（效果好的实验结果），或者找到一个能work的实验版本。方式：\textcolor{blue}{降低问题复杂度，遍历问题点。}
+            \item 分析“work的实验版本”和“不work的实验版本”之间存在performance gap的技术原因。\textcolor{red}{列出尽量多的技术原因。}
+            \item 实验验证上一步中提出的技术原因。\textcolor{red}{快速迭代。}
+            \item 针对导致failure cases的技术原因，提出解法。（需要建立自己的武器库，知道学术界都有哪些技术。可以通过构建\textcolor{blue}{literature tree}来帮助建立武器库。）
+            要经常性地确认自己在正确的方向上：当前的算法思路真的对吗。要避免陷入local minima。建议经常找同学\textcolor{blue}{交流讨论}。
+        \end{enumerate}
+    \end{block}
+\end{frame}
 
 \section{写论文}
 
