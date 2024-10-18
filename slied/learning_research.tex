@@ -104,8 +104,59 @@
     \begin{exampleblock}{novelty的分类}
         创新性越高，它所能影响的文章数量就越多。1类milestone task，2类novel pipeline，3类novel module，4类旧module改进已有pipeline地工作。i.e. \textcolor{blue}{创新性很大程度上，影响文章录用的level。}
     \end{exampleblock}
+    \begin{block}{2. 选题}
+        根据novelty-tree列出的roadmap，选择有研究空间的task，调研这个task有没有重要的technical challenge。\textcolor{red}{选题是对一个research project影响最大的一步，而不是后面的想方法。}
+    \end{block}
+    \begin{block}{3. why not work reason?}
+        从技术层面上分析现在的pipelines在某个task上不work的原因，在pipeline module层面思考可能的原因，然后在pipeline层面或high-level idea层面思考可能的原因。
+    \end{block}
 
-    
+\end{frame}
+
+\begin{frame}
+    \frametitle{想idea}
+    \begin{block}{4. Innovation}
+        \begin{itemize}
+            \item 通过看论文、思考、做实验、与人讨论等方式，发现当前的pipeline满足不了哪个指标。找到的“问题”。
+            \item 1）寻找有没有解决相似“问题”的论文，看看这些论文里有没有分析导致“问题”的技术原因。2）从论文获得的知识。总结这些论文的分析，形成自己的一套思考。3）从有经验的人身上蒸馏知识。4）从实验获得知识。
+        \end{itemize}
+    \end{block}
+    \begin{exampleblock}{找点子}
+        点子函数$f:g\mapsto q$, 其中$g$为具有泛化性的知识，i.e. 可以用在多个问题上，$q$为具体的问题。我们的目标是找到一个函数$f$，使得$q$尽可能优。
+
+        1）知$f_1:g\mapsto q_1,q_1\approx q_2$,求$f_2:g\mapsto q_2$。2）和3）知$q$,找$g$,求$f$。4）知$q,g$,求$f$。\textcolor{blue}{2)和3）难，1）简单一些}。
+    \end{exampleblock}
+    5. 实验验证创新点。
+\end{frame}
+
+\begin{frame}
+    \frametitle{想idea}
+    \begin{block}{Goal-driven research在research产出方面的好处}
+        Goal-driven research的风格是追求重要的任务，试各种方法把这个任务做work。通过一些条件的relax，总可以把一些重要的任务做出一些work的结果。这样project有\textcolor{red}{产出的保证}。
+
+        有些人喜欢追新技术，一味的把新技术调work。但我们这方向是实验科学，不通过大量实验难以确定一个技术是否真的work，导致这种科研方式风险性太大了。
+    \end{block}
+    \begin{block}{当出现新锤子的时候}
+        非常值得拿新锤子来做自己roadmap上的某一个milestone task，这样容易做出有影响力的工作。如：
+        \begin{itemize}
+            \item Transformer出来的时候，拿来搞LoFTR
+            \item NeRF出来的时候，拿来搞Neural Body
+            \item Stable diffusion出来的时候，拿来搞DreamFusion、DreamBooth
+        \end{itemize}
+    \end{block}
+\end{frame}
+
+\begin{frame}
+    \frametitle{想idea}
+    \begin{block}{实验室的帮助}
+        \begin{itemize}
+            \item 开箱自带重要的科研问题 task。
+            \item 丰富的Review经验。
+            \item 防止进入local minimum，路走窄。
+            \item 避免technical flaw，路走死。
+            \item 帮改进其提出的创新。
+        \end{itemize}
+    \end{block}
 \end{frame}
 
 
