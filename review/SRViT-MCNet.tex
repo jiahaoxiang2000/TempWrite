@@ -1,0 +1,130 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{ctex}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{amsmath} % Added for math equation support
+\usepackage{graphicx} % Added for including graphics
+\usepackage{titling}
+\usepackage{subcaption}
+
+\usepackage{multicol}
+\usepackage{listings}
+\usepackage{booktabs}
+\usepackage{multirow}
+
+\usepackage[hidelinks]{hyperref}
+
+\usepackage{xcolor}
+
+% \usepackage[style=authoryear]{biblatex} % Use biber backend
+% \addbibresource{../../paper.bib} % Specify the .bib file
+% Define \lll
+\newcommand{\lll}{\mathrel{<\!\!<\!\!<}}
+% Define \ggg
+\newcommand{\ggg}{\mathrel{>\!\!>\!\!>}}
+\geometry{margin=0.5in}
+\titleformat{\section}{\large\bfseries}{\thesection}{0.5em}{}
+
+% title context and style setting
+\title{SRViT-MCNet：一种物联网恶意软件分类模型-Review}
+\setlength{\droptitle}{-6em} % Reduce space begin the title
+% Redefine \maketitle to display only the title
+\renewcommand{\maketitle}{
+  \begin{center}
+    \LARGE\bfseries\thetitle
+  \end{center}
+}
+
+\begin{document}
+
+\maketitle
+
+\section{审稿要求}
+\begin{enumerate}
+  \item 基于文章所属领域，从整体上给出文章是否具有选题意义和实用价值的评价；
+  \item 具体分析文章，有条理地给出文章的优点（多少不限）；
+  \item 针对文章的缺点和不足，给出3条以上建设性意见（语言表述、书写版式、字符大小写等书写问题可作为附加意见）；
+  \item 给出对该文的取舍结论。
+\end{enumerate}
+
+\section{文章阅读}
+
+为了更好的给出审稿意见，此处我们先对文章进行阅读，以便更好的给出审稿意见。
+
+\noindent\textbf{标题：}SRViT-MCNet：一种物联网恶意软件分类模型
+
+\noindent\textbf{摘要:} 在物联网（IoT）领域，设备的异质性和资源的广泛部署对传统的恶意软件分类方法影响较大。因
+此，为有效地提取物联网恶意软件的局部和全局特征以提高其分类的准确性，提出了一种物联网恶意软件
+分类的混合模型，命名为 SRViT-MCNet。
+\begin{itemize}
+  \item 首先将物联网恶意软件可视化，通过遮挡敏感性分析（Occlusio
+  n Sensitivity）方法截取模型预测置信度大幅下降的位置，并将其转化为 RGB 图像。
+  \item 采用并行特
+  征提取策略，将 SRViT 模块与 MCNet 模块相结合以实现多维特征的捕获。
+  \item  CNN 中加入设计的 MC 模块可
+  有效增强模型捕捉细粒度局部特征的能力
+  \item 设计的 SCFN 取代 RepViT 中的 FFN 可在保持全局上
+  下文捕获的前提下，进一步增强模型对局部特征的敏感性与表达力。
+  \item SRViT-MCNet 在 BIG2
+  015 和 Malimg 数据集上分别获得了 99.52\%和99.28\%的分类准确率。
+\end{itemize}
+
+\noindent 建议：
+\begin{itemize}
+  \item 动机不是很明确，该方法专门适用于物联网恶意软件？物联网下的恶意软件分类方法有何特殊之处？
+  \item 模型的方法比较常规，没有太多的创新点，如何提高模型的创新性？带来的缺点是什么？
+  \item 对整个领域推动不大，相较现有模型提升不是很显著。
+  \item 相关工作，介绍了一些相关工作，但是没有对比分析，并且所提及的三个相关工作，之间的关系不是很明确，为什么是这三者结合，有何特殊之处？
+  \item 图片更改为添加矢量图，以便更好的展示。
+  \item 标题编号重复，3.3 SRViT 模块和3.3 SCFN 模块
+  \item 文献24与文献25之间的文献缺失编号，是否有遗漏？文献格式不统一。
+\end{itemize}
+
+作者将一种新的模型引入恶意软件检测当中，但是该模型并没有太多的创新点，对于整个领域的推动不是很大，建议作者在模型的设计上进行更多的创新，提高模型的创新性。同时，对于相关工作的介绍，建议作者对相关工作进行对比分析，以便更好的展示出该模型的优势。最后，建议作者对文献进行统一格式，以便更好的展示。整篇文章需要进行大修。
+
+
+\section{审稿意见}
+
+\subsection{选题意义和实用价值评价}
+
+该文章针对物联网（IoT）恶意软件分类问题，提出了一种新的混合模型 SRViT-MCNet。随着物联网设备的广泛普及和多样化，传统的恶意软件检测方法面临挑战。因此，专门针对物联网环境下的恶意软件分类研究具有重要的选题意义和实用价值，有助于提高物联网系统的安全性和可靠性。
+
+\subsection{文章优点}
+
+方法创新性：文章将 SRViT 模块与 MCNet 模块相结合，采用并行特征提取策略，实现了对局部和全局特征的有效捕获。
+
+性能优异：在 BIG2015 和 Malimg 数据集上分别取得了 99.52\% 和 99.28\% 的分类准确率，证明了模型的有效性。
+
+可视化处理：通过遮挡敏感性分析方法，将物联网恶意软件可视化，有助于理解模型的决策过程。
+
+\subsection{建设性意见}
+
+动机阐述需加强：需进一步明确物联网环境下恶意软件分类与传统方法的区别，以及提出该模型的具体动机，突出研究的独特性。
+
+创新性有待提升：模型方法较为常规，建议在模型设计上引入更多创新元素，详细说明 MC 模块和 SCFN 的创新点及其带来的优势。
+
+相关工作分析不足：需对所提及的相关工作进行深入的对比分析，明确三者之间的关系，以及选择这三者进行结合的原因。
+
+标题编号错误：文章中出现了标题编号重复的情况（3.3 SRViT 模块和 3.3 SCFN 模块），需进行修改。
+
+图像质量改进：建议将图片更换为矢量图，以提高清晰度，方便读者理解。
+
+参考文献格式统一：文献编号存在缺失（文献 24 与文献 25 之间），需检查是否有遗漏，并统一参考文献的格式。
+
+\subsection{取舍结论}
+
+综合评价，文章选题具有一定的现实意义，但在方法创新和理论阐述上尚有不足。建议作者根据以上意见对文章进行重大修改后，再考虑录用。
+
+% \newpage
+% % Add some vertical space to push content to bottom if needed
+% \vfill
+
+
+% % Include the bibliography
+% \bibliographystyle{alpha}
+% \bibliography{../../paper}
+
+\end{document}
