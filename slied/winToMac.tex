@@ -1,0 +1,100 @@
+\documentclass{beamer}
+\usepackage{ctex} % To support Chinese characters, if needed
+\usepackage{graphicx} % To include images
+\usepackage{hyperref} % To include hyperlinks
+\usepackage{amsmath} % For mathematical symbols
+\usepackage{booktabs} % For beautiful tables
+
+% Theme choice:
+\usetheme{Madrid}
+\usecolortheme{seahorse}
+
+% Custom block colors
+\setbeamercolor{block title}{bg=blue!30,fg=black}
+\setbeamercolor{block body}{bg=blue!10,fg=black}
+% \setbeamercolor{alertblock title}{bg=red!50,fg=white}
+% \setbeamercolor{alertblock body}{bg=red!20,fg=black}
+\setbeamercolor{exampleblock title}{bg=green!50,fg=black}
+\setbeamercolor{exampleblock body}{bg=green!20,fg=black}
+
+% Enable figure numbering
+\setbeamertemplate{caption}[numbered]
+
+
+% Title, author, and date information:
+\title{\textbf{Windows to MacOS}}
+\author[xjh]{Jiahao Xiang}
+
+\date{\today}
+
+\begin{document}
+
+\begin{frame}
+    \titlepage
+\end{frame}
+
+\begin{frame}
+    \frametitle{Preface}
+    
+   \textbf{Start Point:} 前些日子，苹果出了Mac mini 4， 内存白给8G，配上活动打折，我们就入手了一台。 
+   \vfill
+    
+   \textbf{Background:} Windows 15年老用户从xp到11，如果说用windows打打游戏，肯定没啥问题，但是出于coding的目的，UNIX类的系统更加适合。之前用过一段时间linux下的archlinux，但是linux下图形栈的问题，使用起来不舒服，很多大的或小的兼容性问题。
+
+   \vfill
+    \textbf{Goal:} 本文主要是macOS给我带来的一些新的体验。（个人体验，不一定适用于所有人，仅供参考）
+
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{System}
+    \begin{block}{Desktop Environment}
+        \begin{itemize}
+            \item \textbf{Dock:} 任务栏，很少用默认隐藏
+            \item \textbf{Mission Control:} 多桌面管理工具, 和window下近似，但是应用之间的切换逻辑不一致，需要适应
+        \end{itemize}
+    \end{block}
+    \begin{block}{Devices Ecosystem}
+        \begin{itemize}
+            \item \textbf{IPhone:} 所有信息都可以在mac上同步，比如短信，电话，照片等
+            \item \textbf{AirPods:} 无缝连接，可以在mac上直接切换音频输出设备  
+        \end{itemize}
+    \end{block}
+\end{frame}
+
+\begin{frame}
+    \frametitle{GUI Applications}
+    \begin{block}{Tools}
+        \begin{itemize}
+            \item \textbf{Alfred:} 一个很强大的应用，可以替代spotlight，可以自定义很多功能，比如搜索，快捷键等
+            \item \textbf{Rectangle:} 一个窗口管理工具，可以用快捷键调整窗口大小，位置，符合windows下的习惯
+        \end{itemize}
+    \end{block}
+    \begin{block}{Productivity}
+        \begin{itemize}
+            \item \textbf{Screen Studio:} mac下录屏工具，可以录制屏幕，摄像头，声音等
+            \item \textbf{Wechat:} 微信，mac下的微信，功能比windows似乎还多，其他的社交软件也有mac版本，比如qq，钉钉等
+        \end{itemize}
+    \end{block}
+
+    \begin{alertblock}{Conclusion}
+        \textbf{macOS下的GUI应用生态很好（除了那些游戏、建模的软件深度绑定windows），有一部分应用是mac专用的。}
+    \end{alertblock}
+\end{frame}
+
+\begin{frame}
+    \frametitle{NO GUI Applications}
+    \begin{block}{Homebrew}
+        \begin{itemize}
+            \item \textbf{Homebrew:} macOS下的包管理工具，可以安装很多软件，比如git，python，nodejs等
+            \item \textbf{Homebrew Cask:} 一个扩展，可以安装一些GUI软件，比如vscode，firefox等
+        \end{itemize}
+    \end{block}
+    \begin{alertblock}{Conclusion}
+        \textbf{macOS下的命令行工具生态也很好，和linux下具有相同的开发体验，各种代码库都能方便集成。}
+        
+    \end{alertblock}
+\end{frame}
+
+\end{document}
