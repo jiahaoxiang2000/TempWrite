@@ -3,14 +3,34 @@
 \usepackage[margin=1cm]{geometry}  % Set all margins to 2cm
 
 \title{Paper Review: A Physical Layer Endogenous Security Architecturewith Dynamic Slicing Encryption for IoT}
-\author{Jiahao Xiang}
+\author{isomo}
 \date{\today}
 
 \begin{document}
 
 \maketitle
 
+\textbf{NOTE:} Here is the second review of the paper. The first review process involved two reviewers; the first decided it only needed minor fixes. The two reviewers talked about the paper's extension for future work, noting not many issues regarding the scheme proposed by the paper.
+
 \section{Quick Look at the Paper}
+\subsection{Abstract}
+
+We propose a novel physical layer endogenous security (PHY-ES) architecture with a dynamic slicing encryption (DSE) scheme for the physical layer of Internet of Things (IoT) systems.
+
+We present the algorithm for the scheme, and give its performance evaluation method with parameters of data life cycle (DLC), average cost (AC) and deciphering probability.
+
+Compared with other schemes, the SEK-based DSE scheme can reduce the DLC and AC by about 42\% and 35\% on average, respectively.
+
+\subsection{Introduction}
+
+However, the above schemes or protocols based on the traditional architecture lack an independent security function layout and corresponding transmission control channels, and the current physical layer of IoT cannot secure the sensing data traffic of the uplink channels. Therefore, it is necessary to re-plan and re-construct the physical layer architecture of the IoT.
+
+\section{Issues}
+
+\begin{itemize}
+  \item The figure not clear enough, need to be svg format.
+  \item if above the physical layer of the sensing data is security, the security of the physical layer of the IoT system can be guaranteed. Not need the encryption on the physical layer. (Have similar work, so have some significant.)
+\end{itemize}
 
 % if you have a bib file, uncomment the following two lines
 % \bibliographystyle{plain} % Add the bibliography style
