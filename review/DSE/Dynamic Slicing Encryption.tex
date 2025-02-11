@@ -103,6 +103,20 @@ According to the SEK-based DSE scheme, we give the corresponding algorithm as fo
   \item if above the physical layer of the sensing data is security, the security of the physical layer of the IoT system can be guaranteed. Not need the encryption on the physical layer. (Have similar work, so have some significant.)
 \end{itemize}
 
+\section{Review Comments}
+
+The paper proposes a novel PHY-ES architecture with a SEK-based DSE scheme that provides endogenous encryption and decryption for IoT sensing data. The overall concept of combining physical layer security with endogenous key generation is interesting and timely; however, the algorithm descriptions and security analysis require further clarification and logical structuring, and there is a need to distinguish the proposed algorithms from conventional recursive functions by avoiding potential notational conflicts. While the idea is promising, several issues need to be addressed to improve the clarity and strength of the work.
+
+\subsection{Detailed Comments}
+
+\begin{itemize}
+  \item \textbf{Figures:} The figures should be provided in SVG format to ensure clarity and scalability.
+  \item \textbf{Performance Comparison:} The current performance comparison focuses on KGNet and BCFL key generation schemes against DES. It should also include a comparison with similar SEK-based works, particularly those that encrypt on the physical layer.
+  \item \textbf{Algorithm Notation:} The algorithm naming (E1-E3 and D) currently creates confusion as it seems to imply recursive functions. It is recommended to revise the notation to clearly distinguish sequential steps.
+  \item \textbf{Algorithm E3 Clarity:} In Algorithm E3, more details are needed on how the i-th row of the generated key K is inserted into the i-th row of X. A step-by-step explanation would be beneficial.
+  \item \textbf{Security Analysis:} The security evaluation should incorporate discussions on potential attacks. For instance, if a chosen-text attack is applied with a constant one-bit plaintext, the initial SEKs K might become all zeros (in cases where S is odd), making the disarranging easily distinguishable. This raises concerns regarding the overall robustness of the SEK-based DSE scheme.
+\end{itemize}
+
 % if you have a bib file, uncomment the following two lines
 % \bibliographystyle{plain} % Add the bibliography style
 % \bibliography{ref}
