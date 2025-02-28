@@ -1,40 +1,41 @@
 \documentclass[11pt,a4paper,sans]{moderncv}
 
 % ModernCV themes
-\moderncvstyle{casual} % Style options: casual, classic, banking, oldstyle, fancy
-\moderncvcolor{blue}   % Color options: blue, orange, green, red, purple, grey, black
+\moderncvstyle{classic}
+\moderncvcolor{blue}
 
-% Character encoding
-\usepackage[utf8]{inputenc}
+% Chinese language support
+\usepackage[UTF8]{ctex}
 
 % Adjust the page margins
-\usepackage[scale=0.75]{geometry}
+\usepackage[scale=0.8]{geometry}
 
 % Personal data
-\name{Xiang}{Jiahao}
-\title{Curriculum Vitae}
-\address{Hengyang, China}
-\phone[mobile]{+86~1308786239}
+\name{向}{嘉豪}
 \email{jiahaoxiang2000@gmail.com}
-\homepage{www.yuque.com/xjh2000}
-\social[github]{jiahaoxiang2000}
+% Remove the \date command from here as we'll use it in the footer
 
 \begin{document}
 
-%-----       resume       ---------------------------------------------------------
+% Add a footer with the date on the right side
+\renewcommand*{\footrulewidth}{0pt}
+\cfoot{}
+\rfoot{\today}
+
 \makecvtitle
 
-\section{Education}
-\cventry{2017--2021}{ Mechanical design, manufacture and automation}{Changsha University}{Changsha}{undergraduate}{}
-\cventry{2023--2026}{ Electronic information}{Hengyang normal University}{Hengyang}{postgraduate}{}
+\section{自我介绍}
+作为一名具有扎实理论基础和实践能力的密码学研究者，我致力于解决物联网环境中的安全挑战。2021年本科毕业于长沙学院后，我于2023年进入衡阳师范学院攻读计算机电子信息研究生学位，师从李浪教授。凭借对轻量级密码学的浓厚兴趣和执着追求，我的研究成果已发表在国际知名期刊，并主持省级科研创新项目。
 
+\section{研究方向}
+Cryptographic Engineering, Symmetric Cryptography, Internet of Things.
 
-\section{Skills}
-\cvitem{Programming}{Python, C, C++,Verilog}
-\cvitem{Languages}{English, Chinese}
-\cvitem{Tools}{Git,  VSCode, Jupyter Notebook, Vivado, \LaTeX}
+\section{研究论文}
+Xiang, Jiahao, and Lang Li. ``Efficient implementations of CRAFT cipher for Internet of Things." Computers and Electrical Engineering 116 (2024): 109168. （中科院三区）
 
-\section{Interests}
-\cvitem{Hobbies}{Reading, Coding, Runinng}
+Xiang, Jiahao, and Lang Li. ``Low-Latency Implementation of Bitsliced SPN-Cipher on IoT Processors.'' (submitted to IEEE Transactions on Computers, 一审中)
+
+\section{项目经历}
+\cvitem{2024--2026}{主持湖南省研究生科研创新项目 ``轻量级分组密码的软硬件优化研究与'' (项目编号：CX20240977)}
 
 \end{document}
