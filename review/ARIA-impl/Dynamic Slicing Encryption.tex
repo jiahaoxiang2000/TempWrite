@@ -1,0 +1,66 @@
+\documentclass[a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[a4paper,margin=2.54cm]{geometry}  % Standard 1 inch (2.54cm) margins for A4
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{amsmath}
+\usepackage[most]{tcolorbox} % Add this line for colored boxes
+
+% Define a custom note environment
+\newtcolorbox{note}[1][]{colback=yellow!10!white, colframe=orange!80!black, title=Note,#1}
+
+\title{Paper Review: Efficient GPU Parallel Implementation and Optimization of ARIA Block Cipher in CTR Mode and Exhaustive Key Search}
+\author{isomo}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section{Quick Look at the Paper}
+
+\subsection*{Abstract}
+
+\begin{itemize}
+  \item To address this, we merged ARIA’s four individual Sbox tables into a single unified 32-bit table, effectively reducing the total memory size from 4KB to 1KB
+  \item  the CUDA built-in function \_\_byte\_perm() was utilized to efficiently reconstruct the intended output from the reduced unified table without incurring additional computational overhead.
+  \item For exhaustive key search scenarios, we adopted an on-the-fly key expansion approach, significantly minimizing memory usage per thread and enhancing parallel efficiency.
+\end{itemize}
+
+\subsection{Introduction}
+
+To date, there has been no dedicated study(to our knowledge) on optimizing ARIA in CTR mode or on GPU-accelerated key search for ARIA.
+
+\begin{note}
+  This paper how to  optimizing ARIA in CTR mode?
+\end{note}
+
+\begin{itemize}
+  \item We implemented an optimized CTR mode for the ARIA algorithm. Previous researc [6] could not employ a table-copying technique to avoid bank conflicts due to the large size of the Sbox table. In this work, we \textbf{reduced the size of the Sbox table.}
+  \item We extensively utilized CUDA built-in function \textbf{\_\_byte\_perm()}. Encryption processes often require state transformations such as permutations.
+  \item Exhaustive Key Search(ES) in block cipher modes like CTR are suitable for parallel implementations due to their independent block computations. performing key expansion for each thread individually creates a memory burden for storing round keys. To address this, we implemented an \textbf{on-the-fly} approach that computes round keys as needed.
+\end{itemize}
+
+\begin{note}
+  the ECB is also independent block computations, not only the CTR mode.
+\end{note}
+
+\subsection{Background}
+
+\subsubsection{Graphic Processing Unit and CUDA Basics}
+
+The main memory spaces on Nvidia GPUs include global(device) memory, shared memory,constant memory, and registers. \textit{Global memory} is large(several GB on modern GPUs) but resides in VRAM and has the highest access latency. \textit{Shared memory}, on the other hand, is a smaller on-chip memory(typically 48 KB per SM) that offers much lower latency(comparable to L1 cache). However, shared memory is divided into banks; if multiple threads in a warp access the same memory bank, a bank conflict arises, serializing those accesses. Another useful memory space is \textit{constant memory}, which is a read-only cache optimized for broadcast. Constant memory is small(e.g., 64 KB) and actually resides in global memory but is cached such that if all threads in a warp read the same address, the value is served from a fast cache.
+
+\section{Issues}
+
+\begin{itemize}
+  \item
+\end{itemize}
+
+\section{Review Comments}
+
+% if you have a bib file, uncomment the following two lines
+% \bibliographystyle{plain} % Add the bibliography style
+% \bibliography{ref}
+
+\end{document}
