@@ -84,12 +84,12 @@ directly using the integrated table causes an issue, as it outputs a single 8-bi
 
 \section{Review Comments}
 
-This paper presents an efficient GPU parallel implementation and optimization of the ARIA block cipher in CTR mode, with a focus on memory reduction and parallel key search. The work demonstrates practical engineering efforts, such as Sbox table size reduction and on-the-fly key expansion, and provides experimental results on modern GPUs. However, the main innovation appears limited, as the core optimization relies primarily on rearranging the Sbox table and leveraging existing CUDA features. The writing is clear and the experiments are well-organized, but the novelty and technical depth may not be sufficient for publication.
+This paper describes a GPU parallel implementation and optimization of the ARIA block cipher in CTR mode, emphasizing memory reduction and parallel key search. The work demonstrates practical engineering techniques, such as Sbox table size reduction and on-the-fly key expansion, and provides experimental results on modern GPUs. The manuscript is clearly written and the experiments are well-presented. However, the main technical contribution appears incremental, as the optimization is primarily based on rearranging the Sbox table and utilizing standard CUDA features. The novelty and technical depth may not be sufficient for publication.
 
 \begin{itemize}
-  \item The reduction of the Sbox table from 4KB to 1KB is not clearly explained; it seems to be a rearrangement rather than a true reduction in information or computational complexity.
-  \item The use of the CUDA \_\_byte\_perm() function is practical, but this is a standard technique for byte-level operations on GPUs and does not represent a significant algorithmic contribution.
-  \item The overall contribution is more of an engineering optimization than a novel cryptographic or architectural advancement.
+  \item The reduction of the Sbox table from 4KB to 1KB is not sufficiently detailed; it appears to involve rearrangement rather than a substantive reduction in information or computational complexity.
+  \item The application of the CUDA \_\_byte\_perm() function is appropriate for byte-level operations on GPUs, but this is a common technique and does not constitute a significant algorithmic advancement.
+  \item The contribution is mainly an engineering optimization, rather than a novel cryptographic or architectural development.
 \end{itemize}
 
 % if you have a bib file, uncomment the following two lines
