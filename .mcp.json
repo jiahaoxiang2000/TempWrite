@@ -4,12 +4,10 @@
       "type": "stdio",
       "command": "uv",
       "args": ["run", "all-in-mcp"],
-      "env": {}
-    },
-    "github-repo-mcp": {
-      "type": "stdio",
-      "command": "npx",
-      "args": ["github-repo-mcp"]
+      "env": {
+        "APAPER": "true",
+        "GITHUB_REPO_MCP": "true"
+      }
     }
   }
 }

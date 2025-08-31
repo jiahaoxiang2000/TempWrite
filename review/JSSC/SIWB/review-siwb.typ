@@ -27,7 +27,8 @@
   number-align: center,
 )
 
-// Heading styles
+// Heading styles with numbering
+#set heading(numbering: "1.1.1.")
 #show heading.where(level: 1): set text(size: 16pt, weight: "bold")
 #show heading.where(level: 2): set text(size: 14pt, weight: "bold")
 #show heading.where(level: 3): set text(size: 12pt, weight: "bold")
@@ -94,6 +95,7 @@
 
 #v(1em)
 
+= Quick read Paper Information
 
 = Review Summary
 
