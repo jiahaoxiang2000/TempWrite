@@ -329,28 +329,17 @@ This paper presents SiWB, the first silicon-proven multi-core hardware accelerat
   - Could benefit from analysis of emerging DWBC algorithms support
 
 
-= Review Comments
+== Review Comments
 
-#comment-box("Overall Assessment", [
-  This paper presents a significant contribution to white-box cryptography by delivering the first silicon-proven multi-core accelerator for DWBCs. The work demonstrates excellent engineering with strong performance results and comprehensive system integration. The technical innovation in multi-core scheduling and vectorized arithmetic units is noteworthy and addresses real bottlenecks in white-box cryptography adoption.
-])
+The paper presents SiWB, the first silicon-proven multi-core hardware accelerator for Dedicated White-Box Block Ciphers (DWBC), demonstrating significant performance improvements with 11.4 Gbps peak throughput and 389× speedup over software implementations. While the work represents a significant milestone in white-box cryptography with excellent engineering execution and comprehensive system integration, several important aspects require attention for *minor revision*. The technical innovation in multi-core scheduling and vectorized arithmetic units addresses real bottlenecks in white-box cryptography adoption, but the analysis of parallelism effectiveness and scheduler overhead needs strengthening.
 
-#comment-box("Recommendation", [
-  *Accept with Minor Revisions*
+=== Detailed Comments
 
-  The paper makes substantial contributions to the field and demonstrates solid technical execution. The silicon validation adds significant credibility to the results. While there are areas for improvement (particularly in security analysis), the overall contribution merits publication.
-])
+- *Parallelism Effectiveness Analysis*: The paper claims improved throughput through multi-core scaling but lacks quantitative analysis of how parallelism effectiveness (throughput/core ratio) degrades with increasing core count. Since WBC cores perform independent execution tasks, the approach improves total throughput but may not improve parallel efficiency. We advise the authors to discuss the parallelism effectiveness in more detail, including theoretical limits and actual degradation patterns across different core configurations.
 
-#comment-box("Suggested Revisions", [
-  1. *Expand Security Analysis*: Add discussion of physical security considerations and potential countermeasures against side-channel attacks
+- *Scheduler Overhead Evaluation*: Section III.A introduces load-aware scheduling with out-of-order dispatch and in-order recycling, but fails to quantify the trade-offs. The wait time introduced by the in-order recycler should be measured and compared against performance gains from the out-of-order dispatcher. This analysis is critical for understanding the net benefit of the proposed scheduling mechanism.
 
-  2. *Add Temperature Analysis*: Include at least basic characterization across temperature range, or acknowledge this limitation
-
-  3. *Enhance Comparison*: Compare with other multi-core cryptographic processors beyond just DWBC-specific works
-
-  4. *Clarify Technical Details*: Address minor presentation issues and provide more implementation details for reproducibility
-])
-
+- *Figure Labeling Error*: Figure 5 left bottom position incorrectly shows two "Config. LT Unit 0" labels when one should be "Config. LT Unit 1". This technical error needs correction to accurately represent the architecture.
 
 
 // Bibliography section
