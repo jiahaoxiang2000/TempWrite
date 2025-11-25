@@ -45,23 +45,6 @@
 #set heading(numbering: "1.1")
 
 // Heading styles
-#show heading.where(level: 1): it => {
-  pagebreak(weak: true)
-  v(2em)
-  block[
-    #set align(center)
-    #set text(size: 20pt, weight: "bold", fill: primary-color)
-    #if it.numbering != none [
-      #counter(heading).display(it.numbering)
-      #h(0.5em)
-    ]
-    #upper(it.body)
-    #v(1em)
-    #line(length: 60%, stroke: 2pt + primary-color)
-  ]
-  v(1.5em)
-}
-
 #show heading.where(level: 2): it => {
   v(1.5em)
   block[
@@ -92,6 +75,34 @@
 
 // Configure theorem environments with theorion
 #show: show-theorion
+
+// Figure and table numbering (section-based, resets per section)
+#set figure(numbering: num => {
+  let h = counter(heading).get().first()
+  numbering("1.1", h, num)
+})
+
+// Reset figure counter at each level 1 heading
+#show heading.where(level: 1): it => {
+  counter(figure.where(kind: image)).update(0)
+  counter(figure.where(kind: table)).update(0)
+  counter(figure.where(kind: raw)).update(0)
+
+  pagebreak(weak: true)
+  v(2em)
+  block[
+    #set align(center)
+    #set text(size: 20pt, weight: "bold", fill: primary-color)
+    #if it.numbering != none [
+      #counter(heading).display(it.numbering)
+      #h(0.5em)
+    ]
+    #upper(it.body)
+    #v(1em)
+    #line(length: 60%, stroke: 2pt + primary-color)
+  ]
+  v(1.5em)
+}
 
 // Math equation numbering
 #set math.equation(numbering: "(1)")
@@ -157,6 +168,17 @@
 
 #include "adjust/2024-12-15.typ"
 #include "adjust/2025-07-04.typ"
+
+#include "emotion/2024-06-02.typ"
+#include "emotion/2024-08-03.typ"
+#include "emotion/2024-10-04.typ"
+
+#include "review/2024-07-07.typ"
+#include "review/2024-09-12.typ"
+#include "review/2025-05-14.typ"
+#include "review/2025-05-19.typ"
+
+#include "misc/2025-04-03.typ"
 
 #pagebreak()
 

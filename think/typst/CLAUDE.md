@@ -49,12 +49,27 @@ think/typst/
 #include "paper-review/2024-03-05.typ"
 ```
 
+## Common Library Import
+
+All subfiles should import the common library at the top to access theorem environments and utilities:
+
+```typst
+#import "../common.typ": *
+```
+
+The `common.typ` file provides:
+- Theorem environments (`#theorem`, `#definition`, `#proposition`, `#proof`, etc.) from theorion package
+- Custom color scheme (primary-color, secondary-color, accent-color, text-color)
+- Colored text shortcuts (`redt()`, `bluet()`, `greent()`)
+
 ## Chapter Organization Recommendation
 
 ### First File for a Topic (e.g., `algorithm/2024-01-15.typ`)
-The **first file** for each topic must start with the topic-level heading:
+The **first file** for each topic must start with the common library import and topic-level heading:
 
 ```typst
+#import "../common.typ": *
+
 = Algorithm
 
 == 2024-01-15
@@ -63,9 +78,11 @@ Content for first date...
 ```
 
 ### Subsequent Files for the Same Topic (e.g., `algorithm/2024-02-20.typ`)
-Additional files for the **same topic** should **NOT** repeat the topic heading. Start directly with the date heading:
+Additional files for the **same topic** should import common library but **NOT** repeat the topic heading. Start directly with the date heading:
 
 ```typst
+#import "../common.typ": *
+
 == 2024-02-20
 
 Content for second date...
